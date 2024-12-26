@@ -1,0 +1,26 @@
+serve:
+  port: 8001
+
+spring:
+  application:
+    name: order-consumer
+  data:
+    mongodb:
+      uri: mongodb://admin:123@localhost:27017/orderdb?authSource=admin
+      authentication-database: admin
+      auto-index-creation: true
+      host: localhost
+      port: 27017
+      database: orderdb
+      username: admin
+      password: 123
+  rabbit:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    concurrent-consumers: 3
+    max-concurrent-consumers: 5
+    prefetch-count: 10
+    max-attempts: 3

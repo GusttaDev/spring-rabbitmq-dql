@@ -1,0 +1,12 @@
+serve:
+  port: 8000
+
+spring:
+  application:
+    name: order-producer
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
