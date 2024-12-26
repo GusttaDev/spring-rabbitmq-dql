@@ -1,3 +1,71 @@
+# Payloads para criação de dados a serem consumidos.
+
+**Customer**:
+
+```
+curl --location --request POST 'http://localhost:8080/send-customer' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"firstName": "Andreia",
+	"lastName": "Bocelli",
+	"cpf": "02563978954",
+	"gender": "MASCULINE",
+	"dateOfBirth": "2002-02-01",
+	"phones": [
+		{
+			"ddd": 44,
+			"number": "",
+			"type": "RESIDENTIAL"
+		},
+		{
+			"ddd": 41,
+			"number": "3333-2222",
+			"type": "BUSINESS"
+		},
+		{
+			"ddd": 41,
+			"number": "912181-2569",
+			"type": "MOBILE"
+		}
+	],
+	"addresses": [
+		{
+			"zipCode": "",
+			"number": 200,
+			"complement": "complement",
+			"street": "Rua A",
+			"neighborhood": "Bairro B",
+			"recipient": "recipient name"
+		}
+	]
+}
+'
+```
+
+**Order**:
+```
+curl --location --request POST 'http://localhost:8080/send-order' \
+--header 'Content-Type: application/json' \
+--data-raw '   {
+       "orderId": 1000,
+       "customerId":1,
+       "items": [
+           {
+               "product": "Jogo de panelas",
+               "quantity": 1,
+               "price": 750
+           },
+           {
+               "product": "Micro-ondas",
+               "quantity": 0,
+               "price": 650
+           }
+       ]
+   }'
+```
+
+
+
 # Artefatos da Aplicação
 
 ## 1. **RabbitConfig.java**
